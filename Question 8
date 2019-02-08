@@ -1,0 +1,27 @@
+curl -H "content-type: application/json" -XGET "localhost:9200/newlist/_search?pretty" -d"
+{
+  "sort" : [
+      {"grades.score" : {"order" : "desc"}}
+   ],
+
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "borough": "Manhattan" 
+          }
+        },
+        {
+          "match": {
+            "cuisine": "Italian" 
+          }
+        }
+      ]             
+ }    
+ },
+ "size" : 1
+}                       
+  }        
+}
+"

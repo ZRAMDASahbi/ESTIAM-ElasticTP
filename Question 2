@@ -1,0 +1,11 @@
+curl -H "content-type: application/json" -XGET "localhost:9200/newlist/_search?pretty" -d"
+{
+    "query": {
+        "match": {
+            "address.street": {      
+                "query":    "8 Avenue",
+                "operator": "and"
+            }
+        }
+    }
+}

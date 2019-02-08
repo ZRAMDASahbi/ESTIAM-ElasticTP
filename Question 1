@@ -1,0 +1,9 @@
+curl -H "content-type: application/json" -XGET "localhost:9200/newlist/_search?pretty" -d"
+{
+  "query": {
+    "match": {
+      "cuisine": "japonese" 
+    } 
+  },
+  "size": 0
+}
